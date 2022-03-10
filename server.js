@@ -41,5 +41,12 @@ app.patch('/family/:id', (req, res) => {
     .catch( (err) => res.sendStatus(500))
 });
 
+app.delete('/family/:id', (req,res)=>{
+    const id = req.params.id;
+    pool.query('DELETE FROM family WHERE id=$1;',[id])
+    .then((result)=> res.send('deleted'))
+    .catch((err)=> res.status(500))
+});
+
 port = 9000;
 app.listen(port);
