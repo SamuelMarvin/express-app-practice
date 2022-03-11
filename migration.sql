@@ -4,7 +4,7 @@ CREATE TABLE family (
     id serial PRIMARY KEY,
     name text NOT NULL,
     age integer NOT NULL
-)
+);
 
 INSERT INTO family(name, age) VALUES('stephen', 60);
 INSERT INTO family(name, age) VALUES('samuel', 23);
