@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require('express');
 const {Pool} = require('pg');
 const app = express();
 app.use(express.json());
 
 const pool = new Pool ({
-    database: "people",
+    connectionString: "postgres://localhost/people"
 });
 
 app.use(express.static('public'));
@@ -50,5 +51,5 @@ app.delete('/family/:id', (req,res)=>{
     .catch((err)=> res.status(500))
 });
 
-port = 9000;
+port = process.env.PORT;
 app.listen(port);
