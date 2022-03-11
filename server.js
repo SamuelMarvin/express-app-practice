@@ -4,7 +4,6 @@ const pg = require('pg');
 const app = express();
 app.use(express.json());
 const { Pool } = require('pg');
-const db = require('./db/conn')
 
 const { pool } = new Pool ({
     connectionString: "postgres://localhost/people",
@@ -16,8 +15,8 @@ const { pool } = new Pool ({
 app.use(express.static('public'));
 
 app.get('/family', (req, res) =>{
-    db.query("SELECT * FROM family")
-    .then((data)=> res.send(data.rows))
+    pool.query("SELECT * FROM family")
+    .then((result)=> res.send(result.rows))
     .catch((err)=> console.log(err))
 })
 
