@@ -3,8 +3,9 @@ const express = require('express');
 const pg = require('pg');
 const app = express();
 app.use(express.json());
+const { Pool } = require('pg');
 
-const pool = new Pool ({
+const { pool } = new Pool ({
     connectionString: "postgres://localhost/people",
     ssl: {
         rejectUnauthorized: false
