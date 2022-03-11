@@ -16,7 +16,7 @@ app.use(express.static('public'));
 app.get('/family', (req, res) =>{
     pool.query('SELECT * FROM family')
     .then((result)=> res.send(result.rows))
-    .catch((err)=> res.send(err))
+    .catch((err)=> console.log(err))
 })
 
 app.get('/family/:id', (req, res) => {
