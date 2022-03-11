@@ -6,7 +6,7 @@ app.use(express.json());
 const { Pool } = require('pg');
 
 const pool = new Pool ({
-    connectionString: "postgres://localhost/people",
+    connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
