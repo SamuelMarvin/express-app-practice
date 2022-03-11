@@ -5,7 +5,10 @@ const app = express();
 app.use(express.json());
 
 const pool = new Pool ({
-    connectionString: "postgres://localhost/people"
+    connectionString: "postgres://localhost/people",
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 app.use(express.static('public'));
