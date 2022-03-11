@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require('express');
-const {Pool} = require('pg');
+const pg = require('pg');
 const app = express();
 app.use(express.json());
 
@@ -54,5 +54,5 @@ app.delete('/family/:id', (req,res)=>{
     .catch((err)=> res.status(500))
 });
 
-port = process.env.PORT;
+const port = process.env.PORT;
 app.listen(port);
