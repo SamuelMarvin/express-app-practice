@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.get('/family', (req, res) =>{
     pool.query('SELECT * FROM family',)
     .then((result)=> res.send(result.rows))
-    .catch((err)=> res.sendStatus(500))
+    .catch((err)=> res.send(err))
 })
 
 app.get('/family/:id', (req, res) => {
