@@ -1,4 +1,4 @@
--- DROP TABLE IF EXISTS family;
+DROP TABLE IF EXISTS family;
 
 CREATE TABLE family (
     id serial PRIMARY KEY,
